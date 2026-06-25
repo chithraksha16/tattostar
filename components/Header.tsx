@@ -1,9 +1,18 @@
+import Button from "./ui/Button"
 
 const Header = () => {
   return (
     <div className="w-full h-20 flex items-center bgblack text-white shadow-lg">
-      <nav className="w-full">
-      <h3>Tatto<span>Star</span></h3>
+      <nav className="w-full px-10 flex justify-between">
+      <h3 className="text-2xl text-black font-black">Tatto<span className="font-serif font-medium">Star</span></h3>
+      <ul className="list-none flex gap-5 text-black text-base font-medium">
+        <li>Home</li>
+        <li>Our Services</li>
+        <li>About Us</li>
+        <li>Contact Us</li>
+      </ul>
+
+      <Button>Book Appointment</Button>
       </nav>
     </div>
   )
