@@ -1,13 +1,22 @@
-import React from "react"
-interface ButtonProps{
+import React from "react";
+
+type ButtonProps={
   children:React.ReactNode,
   className?:string
-}
-const Button = ({children,className}:ButtonProps) => {
+  size?:"sm"|"md"|"lg",
+  
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+const Button = ({children,className,size="md",...props}:ButtonProps) => {
+  const sizes = {
+        sm: "px-3 py-2 text-sm",
+        md: "px-5 py-2 text-base",
+        lg: "px-6 py-3 text-lg",
+    };
   return (
-    <div className={`${className} px-5 py-1.5 bg-blue-600 text-white text-base font-medium border-none rounded`}>
+    <button className={`${className} ${sizes[size]}  text-white text-base font-medium  rounded`} {...props}>
       {children}
-    </div>
+    </button>
   )
 }
 
