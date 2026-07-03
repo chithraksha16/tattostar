@@ -101,14 +101,14 @@ export default function Home() {
       </motion.main>
       
     </div>
-    <div className="w-full px-20 py-10 bg-white  flex sm:flex-row flex-col justify-center gap-10">
+    <div className="w-full sm:px-20 px-5 py-10 bg-white  flex sm:flex-row flex-col justify-center sm:gap-10 gap-5">
         <Image 
         className="drop-shadow-xl"
         src="/tattoheronext-removebg-preview.png" 
         alt="full body tatto image"
         width={368}
         height={433}/>
-        <div className=" flex flex-col justify-center py-5 space-y-5 w-1/2">
+        <div className="w-full  flex flex-col justify-center py-5 space-y-5 sm:w-1/2">
           <p className="text-sm font-semibold uppercase tracking-wider text-gray-500">Since 2015</p>
           <h3 className="sm:text-4xl text-xl  font-bold ">Professional Artists. Exceptional Tattoo Experiences.</h3>
           <p className=" text-[18px] text-gray-900">Our experienced tattoo artists combine creativity, precision, and craftsmanship to create custom designs that reflect your personality. Every session is carried out in a safe, hygienic, and welcoming environment, ensuring an experience you'll remember as much as the tattoo itself.</p>

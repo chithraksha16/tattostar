@@ -1,9 +1,9 @@
 
 const Footer = () => {
   return (
-    <div>
-      Footer
-    </div>
+    <section className="bg-[#171717] min-h-screen">
+      
+    </section>
   )
 }
 
