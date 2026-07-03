@@ -1,9 +1,12 @@
 "use client"
 import Button from "@/components/ui/Button";
 import { motion } from "framer-motion"
+import { div } from "framer-motion/client";
+import Image from "next/image";
 
 export default function Home() {
   return (
+    <div>
     <div className="relative bg-[#171717] overflow-hidden">
       {/* Radial glow background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(249,115,22,0.08),transparent_60%)]" />
@@ -96,6 +99,23 @@ export default function Home() {
           <span>4.9★ Rated</span>
         </div>
       </motion.main>
+      
+    </div>
+    <div className="w-full px-20 py-10 bg-white  flex sm:flex-row flex-col justify-center gap-10">
+        <Image 
+        className="drop-shadow-xl"
+        src="/tattoheronext-removebg-preview.png" 
+        alt="full body tatto image"
+        width={368}
+        height={433}/>
+        <div className=" flex flex-col justify-center py-5 space-y-5 w-1/2">
+          <p className="text-sm font-semibold uppercase tracking-wider text-gray-500">Since 2015</p>
+          <h3 className="sm:text-4xl text-xl  font-bold ">Professional Artists. Exceptional Tattoo Experiences.</h3>
+          <p className=" text-[18px] text-gray-900">Our experienced tattoo artists combine creativity, precision, and craftsmanship to create custom designs that reflect your personality. Every session is carried out in a safe, hygienic, and welcoming environment, ensuring an experience you'll remember as much as the tattoo itself.</p>
+          <Button size="md" className="self-start bg-black text-white hover:bg-gray-950 transition-colors hover:scale-105">Read more</Button>
+        </div>
+
+      </div>
     </div>
   );
 }
