@@ -1,6 +1,9 @@
+"use client"
+import { useState } from "react";
 import Button from "./ui/Button";
 import {MenuIcon} from "lucide-react"
 const Header = () => {
+  const [isMenu,setIsMenu]=useState(false)
   return (
     <header className="w-full bg-[#171717] text-white shadow-lg">
       <nav className="h-20 sm:px-20 px-5 flex items-center justify-between">

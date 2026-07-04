@@ -14,7 +14,7 @@ const Button = ({children,className,size="md",...props}:ButtonProps) => {
         lg: "px-6 py-3 text-lg",
     };
   return (
-    <button className={`${className} ${sizes[size]}  text-white text-base font-medium  rounded`} {...props}>
+    <button className={`${className} ${sizes[size]}   text-base font-medium  rounded`} {...props}>
       {children}
     </button>
   )

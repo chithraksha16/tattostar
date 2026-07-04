@@ -1,7 +1,6 @@
 "use client"
 import Button from "@/components/ui/Button";
 import { motion } from "framer-motion"
-import { div } from "framer-motion/client";
 import Image from "next/image";
 
 export default function Home() {
@@ -78,13 +77,13 @@ export default function Home() {
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-5 w-full sm:w-auto">
           <Button
             size="md"
-            className="w-full sm:w-auto bg-[#F97316] hover:bg-[#FB923C] hover:scale-105 transition-all duration-300 hover:shadow-[0_0_25px_rgba(249,115,22,0.4)]"
+            className="w-full sm:w-auto text-white bg-[#F97316] hover:bg-[#FB923C] hover:scale-105 transition-all duration-300 hover:shadow-[0_0_25px_rgba(249,115,22,0.4)]"
           >
             Book Appointment
           </Button>
           <Button
             size="md"
-            className="w-full sm:w-auto border border-white/20 hover:bg-white hover:text-black transition-all duration-300"
+            className="w-full sm:w-auto text-white border border-white/20 hover:bg-white hover:text-black transition-all duration-300"
           >
             Explore Tatto
           </Button>
