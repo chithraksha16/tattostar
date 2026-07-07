@@ -113,6 +113,12 @@ export default function Home() {
           <p className=" text-[18px] text-gray-900">Our experienced tattoo artists combine creativity, precision, and craftsmanship to create custom designs that reflect your personality. Every session is carried out in a safe, hygienic, and welcoming environment, ensuring an experience you'll remember as much as the tattoo itself.</p>
           <Button size="md" className="self-start bg-black text-white hover:bg-gray-950 transition-colors hover:scale-105">Read more</Button>
         </div>
+      </div>
+      <div className="bg-neutral-900 min-h-screen"
+      style={{backgroundImage:`radial-gradient(circle at 1px 1px,rgba(6,182,212,0.2)1px,transparent 0)`,
+        backgroundSize:"20px 20px",
+        backgroundRepeat:"repeat"
+      }}>
 
       </div>
     </div>

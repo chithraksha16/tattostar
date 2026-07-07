@@ -3,7 +3,12 @@ import { useState } from "react";
 import Button from "./ui/Button";
 import {MenuIcon} from "lucide-react"
 const Header = () => {
-  const [isMenu,setIsMenu]=useState(false)
+  const [isMenu, setIsMenu] = useState(false)
+  const handleMenu = () => {
+    setIsMenu((prev) => !prev)
+    
+  }
+  console.log(isMenu)
   return (
     <header className="w-full bg-[#171717] text-white shadow-lg">
       <nav className="h-20 sm:px-20 px-5 flex items-center justify-between">
@@ -20,7 +25,7 @@ const Header = () => {
 
         <Button size="sm" className="bg-[#F97316] hover:bg-[#FB923C] sm:flex hidden">Book Appointment</Button>
 
-        <span className="font-medium sm:hidden"><MenuIcon size={30}/></span>
+        <button onClick={()=>handleMenu} className="font-medium sm:hidden"><MenuIcon size={30}/></button>
       </nav>
 
       <div className="w-[90%] mx-auto border-b border-gray-300/25" />
