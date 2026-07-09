@@ -249,7 +249,7 @@ export default function Home() {
             WHAT WE DO
           </span>
 
-          <h3 className="mt-4 text-3xl md:text-5xl font-bold text-white leading-tight">
+          <h3 className="mt-4 text-2xl md:text-4xl font-bold text-white leading-tight">
             {headingWords.map((word, index) => (
               <span
                 key={index}
@@ -263,6 +263,22 @@ export default function Home() {
               </span>
             ))}
           </h3>
+        </div>
+        <div>
+          {services.map((service)=>(
+            <div className="flex gap-5 max-w-4xl mx-auto " key={service.id}>
+            <div className="px-2">
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+              <button>{service.cta}</button>
+            </div>
+            <Image 
+            src={service.image} 
+            alt={service.title}
+            width={200}
+            height={400}/>
+            </div>
+          ))}
         </div>
       </div>
     </div>
