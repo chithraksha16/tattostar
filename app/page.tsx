@@ -14,7 +14,7 @@ export default function Home() {
     {
       id: 1,
       title: "Custom Tattooing",
-      image: "/images/services/custom-tattooing.jpg",
+      image: "https://images.unsplash.com/photo-1597852075234-fd721ac361d3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
         "Bring your ideas to life with custom tattoos designed to reflect your personality and style. From minimal designs to full sleeves, our artists create timeless pieces with precision and care.",
       cta: "Read More",
@@ -22,7 +22,7 @@ export default function Home() {
     {
       id: 2,
       title: "Professional Body Piercing",
-      image: "/images/services/body-piercing.jpg",
+      image: "https://images.unsplash.com/photo-1560577938-a5ed9b19fe12?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGllcmNpbmd8ZW58MHx8MHx8fDA%3D",
       description:
         "Experience safe and hygienic body piercings performed with premium jewelry and sterilized equipment. We prioritize comfort, precision, and proper aftercare for every client.",
       cta: "Read More",
@@ -30,7 +30,7 @@ export default function Home() {
     {
       id: 3,
       title: "Tattoo Cover-Up",
-      image: "/images/services/tattoo-cover-up.jpg",
+      image: "https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8VGF0dG9vJTIwQ292ZXItVXB8ZW58MHx8MHx8fDA%3D",
       description:
         "Turn an old or unwanted tattoo into artwork you'll be proud to wear. Our artists specialize in creative cover-up designs that blend seamlessly with your skin.",
       cta: "Read More",
@@ -38,7 +38,7 @@ export default function Home() {
     {
       id: 4,
       title: "Tattoo Touch-Up",
-      image: "/images/services/tattoo-touch-up.jpg",
+      image: "https://images.unsplash.com/photo-1482329033286-79a3d24413b4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fFRhdHRvbyUyMFRvdWNoLVVwfGVufDB8fDB8fHww",
       description:
         "Restore the beauty of your existing tattoo with professional touch-up services. We enhance faded ink, sharpen details, and revive colors for a fresh new look.",
       cta: "Read More",
@@ -46,7 +46,7 @@ export default function Home() {
     {
       id: 5,
       title: "Permanent Makeup",
-      image: "/images/services/permanent-makeup.jpg",
+      image: "https://images.unsplash.com/photo-1654403868650-b67027f3627f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fFBlcm1hbmVudCUyME1ha2V1cHxlbnwwfHwwfHx8MA%3D%3D",
       description:
         "Enhance your natural beauty with long-lasting cosmetic tattooing, including brows, eyeliner, and lip blush, performed with precision and artistic expertise.",
       cta: "Read More",
@@ -54,7 +54,7 @@ export default function Home() {
     {
       id: 6,
       title: "Creative Nail Art",
-      image: "/images/services/nail-art.jpg",
+      image: "https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q3JlYXRpdmUlMjBOYWlsJTIwQXJ0fGVufDB8fDB8fHww",
       description:
         "Express your style with custom nail designs crafted to suit every occasion. From minimalist elegance to bold artistic creations, we deliver flawless results.",
       cta: "Read More",
@@ -62,19 +62,11 @@ export default function Home() {
     {
       id: 7,
       title: "Henna Art",
-      image: "/images/services/henna-art.jpg",
+      image: "https://images.unsplash.com/photo-1505932794465-147d1f1b2c97?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGVubmElMjBhcnR8ZW58MHx8MHx8fDA%3D",
       description:
         "Celebrate special occasions with beautifully handcrafted henna designs. We create traditional and modern patterns perfect for weddings, festivals, and celebrations.",
       cta: "Read More",
-    },
-    {
-      id: 8,
-      title: "Tooth Gems",
-      image: "/images/services/tooth-gems.jpg",
-      description:
-        "Add a touch of sparkle to your smile with professionally applied tooth gems. Safe, stylish, and non-invasive, they're the perfect way to express your individuality.",
-      cta: "Read More",
-    },
+    }
   ];
 
   const [scope, animate] = useAnimate();
@@ -237,7 +229,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full bg-[#171717] min-h-screen">
+      <div className="w-full bg-[#171717] min-h-screen py-10">
         <div ref={scope} className="w-full text-center py-14">
           <span
             className="section-caption inline-block text-sm tracking-[0.25em] font-semibold text-[#F97316] uppercase opacity-0"
@@ -264,19 +256,19 @@ export default function Home() {
             ))}
           </h3>
         </div>
-        <div>
+        <div className="text-white space-y-96 my-10">
           {services.map((service)=>(
-            <div className="flex gap-5 max-w-4xl mx-auto " key={service.id}>
+            <div className="flex gap-5 max-w-4xl mx-auto px-10  " key={service.id}>
             <div className="px-2">
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
+              <h3 className="text-2xl font-medium">{service.title} <div className="mt-2 h-2 w-36 bg-[#F97316]" style={{clipPath: "polygon(0 0, 100% 35%, 100% 65%, 0 100%)",}}/></h3>
+              <p className="text-base text-neutral-400">{service.description}</p>
               <button>{service.cta}</button>
             </div>
             <Image 
             src={service.image} 
             alt={service.title}
-            width={200}
-            height={400}/>
+            width={400}
+            height={600}/>
             </div>
           ))}
         </div>
