@@ -8,7 +8,7 @@ const Header = () => {
     setIsMenu((prev) => !prev)
     
   }
-  console.log(isMenu)
+  
   return (
     <header className="w-full bg-[#171717] text-white shadow-lg">
       <nav className="h-20 sm:px-20 px-5 flex items-center justify-between">
@@ -24,8 +24,15 @@ const Header = () => {
         </ul>
 
         <Button size="sm" className="bg-[#F97316] hover:bg-[#FB923C] sm:flex hidden">Book Appointment</Button>
-
+        
         <button onClick={()=>handleMenu} className="font-medium sm:hidden"><MenuIcon size={30}/></button>
+        {
+          isMenu &&(
+            <div>
+              
+            </div>
+          )
+        }
       </nav>
 
       <div className="w-[90%] mx-auto border-b border-gray-300/25" />

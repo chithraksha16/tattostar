@@ -232,7 +232,7 @@ export default function Home() {
       <div className="w-full bg-[#171717] min-h-screen py-10">
         <div ref={scope} className="w-full text-center py-14">
           <span
-            className="section-caption inline-block text-sm tracking-[0.25em] font-semibold text-[#F97316] uppercase opacity-0"
+            className="section-caption inline-block text-base tracking-[0.25em] font-semibold text-[#F97316] uppercase opacity-0"
             style={{
               transform: "translateY(20px)",
               filter: "blur(8px)",
@@ -262,7 +262,9 @@ export default function Home() {
             <div className="px-2 space-y-2">
               <h3 className="text-2xl font-medium">{service.title} <div className="mt-2 h-2 w-36 bg-[#F97316]" style={{clipPath: "polygon(0 0, 100% 35%, 100% 65%, 0 100%)",}}/></h3>
               <p className="text-base text-neutral-400">{service.description}</p>
-              <button className="px-4 py-1 bg-white text-black rounded-sm text-sm font-medium">{service.cta}</button>
+              <button className="relative px-4 py-1 border-white/50 border rounded-sm text-sm font-medium ">{service.cta}
+              <div className="absolute right-0 -bottom-px left-1.5 h-px w-[88%] bg-linear-to-r from-pink-500 via-sky-500 to-green-500 rounded-sm"></div>
+              </button>
             </div>
             <Image 
             className="w-96 h-64 rounded shadow-md shadow-neutral-700"
