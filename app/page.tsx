@@ -5,11 +5,25 @@ import {
   useAnimate,
   stagger,
   useInView,
+  useScroll,
+  useTransform,
+  useMotionTemplate,
 } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
+const MotionImage = motion(Image);
 
 export default function Home() {
+  const ref=useRef<HTMLDivElement | null>(null)
+  const {scrollYProgress}=useScroll({
+    target:ref,
+    offset:["start end","end start"]
+  })
+
+const y=useTransform(scrollYProgress,[0,1],[100, -100]);
+const blur = useTransform(scrollYProgress, [0, 1], [0, 10]);
+const filter = useMotionTemplate`blur(${blur}px)`;
+
   const services = [
     {
       id: 1,
@@ -112,6 +126,8 @@ export default function Home() {
 
     animateHeading();
   }, [isInView, animate]);
+
+
 
   return (
     <div>
@@ -256,22 +272,29 @@ export default function Home() {
             ))}
           </h3>
         </div>
-        <div className="text-white space-y-96 my-10">
+        <div className="text-white space-y-96 my-10" ref={ref}>
           {services.map((service)=>(
-            <div className="flex items-center gap-5 max-w-4xl mx-auto px-10  " key={service.id}>
-            <div className="px-2 space-y-2">
+            <div className="flex items-center gap-5 max-w-4xl mx-auto px-10  "  key={service.id}>
+            <motion.div
+            
+            style={{
+              filter
+            }}
+             className="px-2 space-y-2">
               <h3 className="text-2xl font-medium">{service.title} <div className="mt-2 h-2 w-36 bg-[#F97316]" style={{clipPath: "polygon(0 0, 100% 35%, 100% 65%, 0 100%)",}}/></h3>
               <p className="text-base text-neutral-400">{service.description}</p>
               <button className="relative px-4 py-1 border-white/50 border rounded-sm text-sm font-medium ">{service.cta}
               <div className="absolute right-0 -bottom-px left-1.5 h-px w-[88%] bg-linear-to-r from-pink-500 via-sky-500 to-green-500 rounded-sm"></div>
               </button>
-            </div>
-            <Image 
-            className="w-96 h-64 rounded shadow-md shadow-neutral-700"
-            src={service.image} 
-            alt={service.title}
-            width={400}
-            height={600}/>
+            </motion.div>
+            <MotionImage
+              style={{y,
+              }}
+              className="w-96 h-64 rounded shadow-md shadow-neutral-700"
+              src={service.image} 
+              alt={service.title}
+              width={400}
+              height={600} />
             </div>
           ))}
         </div>
