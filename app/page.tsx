@@ -83,6 +83,8 @@ const filter = useMotionTemplate`blur(${blur}px)`;
     }
   ];
 
+ 
+
   const [scope, animate] = useAnimate();
   const isInView = useInView(scope, {
     once: true,
@@ -272,15 +274,33 @@ const filter = useMotionTemplate`blur(${blur}px)`;
             ))}
           </h3>
         </div>
-        <div className="text-white space-y-96 my-10" ref={ref}>
+       <ServiceCard services={services}/>
+      </div>
+    </div>
+  );
+}
+
+ interface ServiceCardDetails{
+    id:number,
+    title:string,
+    image:string,
+    description:string,
+    cta:string
+  }
+
+export const ServiceCard=( {services,
+}: {
+  services: ServiceCardDetails[]})=>{
+  return(
+ <div className="text-white space-y-96 my-10" >
           {services.map((service)=>(
             <div className="flex items-center gap-5 max-w-4xl mx-auto px-10  "  key={service.id}>
             <motion.div
             
             style={{
-              filter
+              
             }}
-             className="px-2 space-y-2">
+            className="px-2 space-y-2">
               <h3 className="text-2xl font-medium">{service.title} <div className="mt-2 h-2 w-36 bg-[#F97316]" style={{clipPath: "polygon(0 0, 100% 35%, 100% 65%, 0 100%)",}}/></h3>
               <p className="text-base text-neutral-400">{service.description}</p>
               <button className="relative px-4 py-1 border-white/50 border rounded-sm text-sm font-medium ">{service.cta}
@@ -288,7 +308,7 @@ const filter = useMotionTemplate`blur(${blur}px)`;
               </button>
             </motion.div>
             <MotionImage
-              style={{y,
+              style={{
               }}
               className="w-96 h-64 rounded shadow-md shadow-neutral-700"
               src={service.image} 
@@ -298,7 +318,5 @@ const filter = useMotionTemplate`blur(${blur}px)`;
             </div>
           ))}
         </div>
-      </div>
-    </div>
-  );
+  )
 }
