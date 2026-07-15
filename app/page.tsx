@@ -14,15 +14,7 @@ import Image from "next/image";
 const MotionImage = motion(Image);
 
 export default function Home() {
-  const ref=useRef<HTMLDivElement | null>(null)
-  const {scrollYProgress}=useScroll({
-    target:ref,
-    offset:["start end","end start"]
-  })
-
-const y=useTransform(scrollYProgress,[0,1],[100, -100]);
-const blur = useTransform(scrollYProgress, [0, 1], [0, 10]);
-const filter = useMotionTemplate`blur(${blur}px)`;
+  
 
   const services = [
     {
@@ -291,6 +283,16 @@ const filter = useMotionTemplate`blur(${blur}px)`;
 export const ServiceCard=( {services,
 }: {
   services: ServiceCardDetails[]})=>{
+
+    const ref=useRef<HTMLDivElement | null>(null)
+  const {scrollYProgress}=useScroll({
+    target:ref,
+    offset:["start end","end start"]
+  })
+
+const y=useTransform(scrollYProgress,[0,1],[100, -100]);
+const blur = useTransform(scrollYProgress, [0, 1], [0, 10]);
+const filter = useMotionTemplate`blur(${blur}px)`;
   return(
  <div className="text-white space-y-96 my-10" >
           {services.map((service)=>(
@@ -298,7 +300,7 @@ export const ServiceCard=( {services,
             <motion.div
             
             style={{
-              
+              filter:filter
             }}
             className="px-2 space-y-2">
               <h3 className="text-2xl font-medium">{service.title} <div className="mt-2 h-2 w-36 bg-[#F97316]" style={{clipPath: "polygon(0 0, 100% 35%, 100% 65%, 0 100%)",}}/></h3>
