@@ -294,9 +294,9 @@ const y=useTransform(scrollYProgress,[0,1],[100, -100]);
 const blur = useTransform(scrollYProgress, [0, 1], [0, 10]);
 const filter = useMotionTemplate`blur(${blur}px)`;
   return(
- <div className="text-white space-y-96 my-10" >
+ <div className="text-white space-y-96 my-10" ref={ref} >
           {services.map((service)=>(
-            <div className="flex items-center gap-5 max-w-4xl mx-auto px-10  "  key={service.id}>
+            <div className="flex items-center gap-5 max-w-4xl mx-auto px-10 "   key={service.id}>
             <motion.div
             
             style={{
@@ -311,6 +311,7 @@ const filter = useMotionTemplate`blur(${blur}px)`;
             </motion.div>
             <MotionImage
               style={{
+                y
               }}
               className="w-96 h-64 rounded shadow-md shadow-neutral-700"
               src={service.image} 
