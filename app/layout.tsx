@@ -5,7 +5,6 @@ import Footer from "@/components/Footer";
 
 
 
-
 const siteUrl = "https://www.tattostar.com"; 
 
 export const metadata: Metadata = {
