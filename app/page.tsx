@@ -351,6 +351,7 @@ const ServiceItem = ({
       <MotionImage
         style={{
           y,
+          filter
         }}
         className="w-96 h-64 rounded shadow-md shadow-neutral-700"
         src={service.image}
