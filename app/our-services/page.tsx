@@ -62,7 +62,12 @@ const page = () => {
 
   return (
     <div className="w-full h-screen bg-black">
-    
+    <div>
+      <h2>Crafted for Every Style. Designed to Last.</h2>
+      <p>From custom tattoos to professional piercings and artistic beauty services, our skilled artists deliver exceptional craftsmanship tailored to your unique style.</p>
+    </div>
+
+
     </div>
   )
 }

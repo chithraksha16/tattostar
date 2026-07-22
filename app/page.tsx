@@ -326,11 +326,11 @@ const ServiceItem = ({
         }}
         className="px-2  space-y-2"
       >
-        <h3 className="text-2xl font-medium">
+        <h3 className="text-2xl font-medium leading-4">
           {service.title}
 
           <div
-            className="mt-2 h-2 w-36 bg-[#F97316]"
+            className="mt-2 h-2 w-36 bg-[#F97316] opacity-50"
             style={{
               clipPath: "polygon(0 0,100% 35%,100% 65%,0 100%)",
             }}
