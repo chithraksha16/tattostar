@@ -8,8 +8,9 @@ import {
   useScroll,
   useTransform,
   useMotionTemplate,
+  useMotionValueEvent,
 } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 const MotionImage = motion(Image);
 
@@ -239,7 +240,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full bg-[#171717] min-h-screen py-10">
+      <div className="w-full bg-[#171717] min-h-screen py-5">
         <div ref={scope} className="w-full text-center py-14">
           <span
             className="section-caption inline-block text-base tracking-[0.25em] font-semibold text-[#F97316] uppercase opacity-0"
@@ -266,7 +267,7 @@ export default function Home() {
             ))}
           </h3>
         </div>
-       <ServiceCard services={services}/>
+      <ServiceCard services={services}/>
       </div>
     </div>
   );
@@ -285,8 +286,28 @@ export const ServiceCard = ({
 }: {
   services: ServiceCardDetails[];
 }) => {
+ const containerRef=useRef<HTMLDivElement>(null);
+
+ const {scrollYProgress}=useScroll({
+  target:containerRef,
+  offset:["start end","end start"]
+ })
+
+ const backgrounds=["#171717","#190B28","#182825","#32373B","#42273B","#19180A","#004F2D"];
+ const [background,setBackground]=useState(backgrounds[0]);
+
+ useMotionValueEvent(scrollYProgress,"change" , (latest)=>{
+  setBackground(backgrounds[Math.floor(latest * backgrounds.length)])
+ });
+
   return (
-    <div className="text-white space-y-96 my-10">
+    <div 
+    ref={containerRef}
+      style={{
+    backgroundColor: background,
+    transition: "background-color 0.5s ease",
+  }}
+    className="text-white space-y-96 my-10">
       {services.map((service) => (
         <ServiceItem key={service.id} service={service} />
       ))}
@@ -313,6 +334,7 @@ const ServiceItem = ({
   const opacity = useTransform(scrollYProgress, [0, 0.25, 0.8, 1], [0, 1, 1, 0]);
 
   const filter = useMotionTemplate`blur(${blur}px)`;
+  const scale=useTransform(scrollYProgress,[0.5,1],[1,0.8])
 
   return (
     <div
@@ -323,6 +345,7 @@ const ServiceItem = ({
         style={{
           filter,
           opacity,
+          scale
         }}
         className="px-2  space-y-2"
       >
