@@ -269,6 +269,9 @@ export default function Home() {
         </div>
       <ServiceCard services={services}/>
       </div>
+      <div className="w-full px-5">
+      <h3>Our Testimonials</h3>
+      </div>
     </div>
   );
 }
