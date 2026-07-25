@@ -269,8 +269,15 @@ export default function Home() {
         </div>
       <ServiceCard services={services}/>
       </div>
-      <div className="w-full px-5">
+      <div className="w-full px-5"
+      style={{
+        backgroundImage:"radial-gradient(circle at 0.5px 0.5px,rgba(6,182,212,0.2)0.5px,transparent 0)",
+        backgroundSize:"8px 8px",
+        backgroundRepeat:"repeat"
+
+      }}>
       <h3>Our Testimonials</h3>
+      <p></p>
       </div>
     </div>
   );
