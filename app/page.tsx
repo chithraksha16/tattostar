@@ -269,15 +269,17 @@ export default function Home() {
         </div>
       <ServiceCard services={services}/>
       </div>
-      <div className="w-full px-5"
-      style={{
-        backgroundImage:"radial-gradient(circle at 0.5px 0.5px,rgba(6,182,212,0.2)0.5px,transparent 0)",
-        backgroundSize:"8px 8px",
-        backgroundRepeat:"repeat"
-
-      }}>
-      <h3>Our Testimonials</h3>
+      <div className="bg-neutral-900 w-full flex justify-center py-5">
+      <div className="w-[98%] px-5 bg-neutral-800 h-screen rounded-lg"
+     style={{
+  backgroundImage:
+    "radial-gradient(circle at 1.5px 1.5px, rgba(6,182,212,0.2) 2px, transparent 0)",
+  backgroundSize: "19px 19px",
+  backgroundRepeat: "repeat",
+}}>
+      <h3 className="text-center font-bold text-4xl p-5 text-white">Our Testimonials</h3>
       <p></p>
+      </div>
       </div>
     </div>
   );
@@ -303,7 +305,7 @@ export const ServiceCard = ({
   offset:["start end","end start"]
  })
 
- const backgrounds=["#171717","#190B28","#182825","#32373B","#42273B","#19180A","#004F2D"];
+ const backgrounds=["#171717","#190B28","#182825","#32373B","#42273B","#19180A","#171717"];
  const [background,setBackground]=useState(backgrounds[0]);
 
  useMotionValueEvent(scrollYProgress,"change" , (latest)=>{
