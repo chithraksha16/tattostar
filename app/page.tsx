@@ -12,6 +12,7 @@ import {
 } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Testimonials from "@/components/Testimonials";
 const MotionImage = motion(Image);
 
 export default function Home() {
@@ -270,15 +271,14 @@ export default function Home() {
       <ServiceCard services={services}/>
       </div>
       <div className="bg-neutral-900 w-full flex justify-center py-5">
-      <div className="w-[98%] px-5 bg-neutral-800 h-screen rounded-lg"
+      <div className="w-[98%] px-5 bg-neutral-800  rounded-lg"
      style={{
   backgroundImage:
     "radial-gradient(circle at 1.5px 1.5px, rgba(6,182,212,0.2) 2px, transparent 0)",
   backgroundSize: "19px 19px",
   backgroundRepeat: "repeat",
 }}>
-      <h3 className="text-center font-bold text-4xl p-5 text-white">Our Testimonials</h3>
-      <p></p>
+      <Testimonials/>
       </div>
       </div>
     </div>
