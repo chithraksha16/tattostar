@@ -75,7 +75,7 @@ const Testimonials = () => {
                     viewport={{ once: true }}
                     className="mb-20 text-center"
                 >
-                    <p className="mb-3 text-cyan-400 font-semibold uppercase tracking-[0.25em]">
+                    <p className="mb-3 text-[#F97316] font-semibold uppercase tracking-[0.25em]">
                         Testimonials
                     </p>
 
@@ -96,7 +96,7 @@ const Testimonials = () => {
                             transition={{ duration: 0.5 }}
                             className="relative rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl p-10 md:p-14"
                         >
-                            <Quote className="absolute right-10 top-10 h-14 w-14 text-cyan-500/20" />
+                            <Quote className="absolute right-10 top-10 h-14 w-14 text-[#F97316]" />
 
                             <div className="flex flex-col items-center text-center">
                                 <Image
@@ -104,15 +104,15 @@ const Testimonials = () => {
                                     alt={testimonialsData[active].name}
                                     width={90}
                                     height={90}
-                                    className="rounded-full border-4 border-cyan-500 object-cover"
+                                    className="rounded-full border-4 border-[#F97316] object-cover"
                                 />
 
                                 <div className="mt-6 flex gap-1">
                                     {Array.from({ length: 5 }).map((_, i) => (
                                         <Star
                                             key={i}
-                                            fill="#06b6d4"
-                                            className="h-5 w-5 text-cyan-500"
+                                            fill="#F97316"
+                                            className="h-5 w-5 text-[#F97316]"
                                         />
                                     ))}
                                 </div>
@@ -151,7 +151,7 @@ const Testimonials = () => {
                                 width={60}
                                 height={60}
                                 className={`rounded-full object-cover border-2 transition-all ${active === index
-                                        ? "border-cyan-500"
+                                        ? "border-[#F97316]"
                                         : "border-white/10"
                                     }`}
                             />
@@ -159,7 +159,7 @@ const Testimonials = () => {
                             {active === index && (
                                 <motion.div
                                     layoutId="activeRing"
-                                    className="absolute inset-0 rounded-full border-2 border-cyan-500"
+                                    className="absolute inset-0 rounded-full border-2 border-[#F97316]"
                                     transition={{
                                         type: "spring",
                                         stiffness: 300,
@@ -179,7 +179,7 @@ const Testimonials = () => {
                             key={index}
                             onClick={() => setActive(index)}
                             className={`h-2 rounded-full transition-all duration-500 ${active === index
-                                    ? "w-10 bg-cyan-500"
+                                    ? "w-10 bg-[#F97316]"
                                     : "w-2 bg-white/20"
                                 }`}
                         />
