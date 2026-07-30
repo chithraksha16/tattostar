@@ -93,18 +93,18 @@ export default function ContactForm() {
               <div>
 
                 <label className="block mb-2 text-sm text-zinc-300">
-                  Tattoo Style
+                  Choose Services
                 </label>
 
                 <select className="w-full rounded-xl bg-zinc-900 border border-zinc-700 p-3 outline-none focus:border-orange-500">
 
-                  <option>Fine Line</option>
-                  <option>Blackwork</option>
-                  <option>Realism</option>
-                  <option>Traditional</option>
-                  <option>Geometric</option>
-                  <option>Minimal</option>
-                  <option>Custom</option>
+                  <option>Tattooing</option>
+                  <option>Body Piercing</option>
+                  <option>Tattoo Cover-Up</option>
+                  <option>Tattoo Touch-Up</option>
+                  <option>Permanent Makeup</option>
+                  <option>Nail Art</option>
+                  <option>Henna Art</option>
 
                 </select>
 
