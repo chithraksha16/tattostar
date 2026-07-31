@@ -68,27 +68,6 @@ export default function ContactForm() {
                 name="email"
               />
 
-              <Textarea
-                label="Tattoo Idea"
-                placeholder="Describe your tattoo..."
-                name="idea"
-              />
-
-              <div className="grid md:grid-cols-2 gap-5">
-
-                <Input
-                  label="Placement"
-                  placeholder="Forearm"
-                  name="placement"
-                />
-
-                <Input
-                  label="Approx Size"
-                  placeholder="5 inches"
-                  name="size"
-                />
-
-              </div>
 
               <div>
 
