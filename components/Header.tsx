@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react";
 import Button from "./ui/Button";
-import {MenuIcon} from "lucide-react"
+import {Link, MenuIcon} from "lucide-react"
 const Header = () => {
   const [isMenu, setIsMenu] = useState(false)
   const handleMenu = () => {
@@ -17,10 +17,10 @@ const Header = () => {
         </h3>
         
         <ul className=" sm:flex hidden  gap-5 text-base font-medium">
-          <li>Home</li>
-          <li>Our Services</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
+          <Link href="/"><li>Home</li></Link>
+          <Link href="/our-services"><li>Our Services</li></Link>
+          <Link href="/about-us"><li>About Us</li></Link>
+          <Link href="/contact-us"><li>Contact Us</li></Link>
         </ul>
 
         <Button size="sm" className="bg-[#F97316] hover:bg-[#FB923C] sm:flex hidden">Book Appointment</Button>
