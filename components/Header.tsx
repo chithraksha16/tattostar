@@ -1,7 +1,8 @@
 "use client"
 import { useState } from "react";
 import Button from "./ui/Button";
-import {Link, MenuIcon} from "lucide-react"
+import Link from "next/link";
+import { MenuIcon} from "lucide-react"
 const Header = () => {
   const [isMenu, setIsMenu] = useState(false)
   const handleMenu = () => {
