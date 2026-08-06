@@ -9,10 +9,11 @@ const Header = () => {
     setIsMenu((prev) => !prev)
     
   }
+  console.log(isMenu)
   
   return (
     <header className="w-full bg-[#171717] text-white shadow-lg">
-      <nav className="h-20 sm:px-20 px-5 flex items-center justify-between">
+      <nav className=" relative h-20 sm:px-20 px-5 flex items-center justify-between">
         <h3 className="text-2xl font-black">
           Tatto<span className="font-serif font-medium">Star</span>
         </h3>
@@ -29,7 +30,7 @@ const Header = () => {
         <button onClick={()=>handleMenu} className="font-medium sm:hidden"><MenuIcon size={30}/></button>
         {
           isMenu &&(
-            <div>
+            <div className="absolute top-0 left-80 w-2xl h-full">
               
             </div>
           )
